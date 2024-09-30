@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulos>
+    <janela>
+        <modulo>
+            <nome>tkinter</nome>
+            <descricao>Biblioteca padrão para GUIs em Python.</descricao>
+        </modulo>
+        <modulo>
+            <nome>PyQt5</nome>
+            <descricao>Biblioteca avançada para criação de interfaces gráficas.</descricao>
+        </modulo>
+        <modulo>
+            <nome>Kivy</nome>
+            <descricao>Framework para interfaces gráficas, ideal para dispositivos móveis.</descricao>
+        </modulo>
+    </janela>
+    <usb>
+        <modulo>
+            <nome>pyusb</nome>
+            <descricao>Biblioteca para comunicação com dispositivos USB em Python.</descricao>
+        </modulo>
+        <modulo>
+            <nome>usbinfo</nome>
+            <descricao>Utilitário para obter informações sobre dispositivos USB.</descricao>
+        </modulo>
+    </usb>
+    <perifericos>
+        <modulo>
+            <nome>evdev</nome>
+            <descricao>Biblioteca para capturar eventos de dispositivos de entrada.</descricao>
+        </modulo>
+    </perifericos>
+    <camera>
+        <modulo>
+            <nome>opencv</nome>
+            <descricao>Biblioteca poderosa para processamento de imagens e captura de vídeo.</descricao>
+        </modulo>
+    </camera>
+    <ficheiros>
+        <modulo>
+            <nome>os</nome>
+            <descricao>Biblioteca padrão para manipulação de ficheiros.</descricao>
+        </modulo>
+    </ficheiros>
+</modulos>

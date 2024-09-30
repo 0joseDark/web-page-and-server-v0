@@ -1,0 +1,11 @@
+meu_projeto/
+├── templates/
+│   ├── index.html
+│   ├── modulos_windows.html
+│   ├── modulos_linux.html
+├── static/
+│   ├── style.css
+│   └── xml/
+│       ├── modulos_windows.xml
+│       └── modulos_linux.xml
+├── app.py

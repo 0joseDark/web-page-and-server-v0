@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulos para Windows 10</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function carregarModulos() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "/static/xml/modulos_windows.xml", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let xmlDoc = xhr.responseXML;
+                    let modulosJanela = xmlDoc.getElementsByTagName("janela")[0].getElementsByTagName("modulo");
+                    let modulosUSB = xmlDoc.getElementsByTagName("usb")[0].getElementsByTagName("modulo");
+                    let modulosPerifericos = xmlDoc.getElementsByTagName("perifericos")[0].getElementsByTagName("modulo");
+                    let modulosCamera = xmlDoc.getElementsByTagName("camera")[0].getElementsByTagName("modulo");
+                    let modulosFicheiros = xmlDoc.getElementsByTagName("ficheiros")[0].getElementsByTagName("modulo");
+
+                    mostrarModulos(modulosJanela, "m_janela");
+                    mostrarModulos(modulosUSB, "m_usb");
+                    mostrarModulos(modulosPerifericos, "m_perifericos");
+                    mostrarModulos(modulosCamera, "m_camera");
+                    mostrarModulos(modulosFicheiros, "m_ficheiros");
+                }
+            };
+            xhr.send();
+        }
+
+        function mostrarModulos(modulos, secaoID) {
+            let secao = document.getElementById(secaoID);
+            for (let i = 0; i < modulos.length; i++) {
+                let nome = modulos[i].getElementsByTagName("nome")[0].textContent;
+                let descricao = modulos[i].getElementsByTagName("descricao")[0].textContent;
+                let div = document.createElement("div");
+                div.innerHTML = "<h3>" + nome + "</h3><p>" + descricao + "</p>";
+                secao.appendChild(div);
+            }
+        }
+    </script>
+</head>
+<body onload="carregarModulos()">
+    <h1>Módulos para Windows 10</h1>
+    <p>Abaixo estão os módulos de Python desdobráveis para trabalhar com janelas, USB, periféricos, e outros dispositivos:</p>
+
+    <h2>Módulos de Janelas</h2>
+    <div id="m_janela"></div>
+
+    <h2>Módulos USB</h2>
+    <div id="m_usb"></div>
+
+    <h2>Módulos para Periféricos</h2>
+    <div id="m_perifericos"></div>
+
+    <h2>Módulos de Câmara</h2>
+    <div id="m_camera"></div>
+
+    <h2>Módulos de Ficheiros</h2>
+    <div id="m_ficheiros"></div>
+
+    <a href="/">Voltar à Página Inicial</a>
+</body>
+</html>
