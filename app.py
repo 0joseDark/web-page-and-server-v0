@@ -1,6 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
-# Criar a aplicação Flask
 app = Flask(__name__)
 
 @app.route('/')
@@ -19,5 +18,5 @@ def modulos_linux():
 def modulos_janelas():
     return render_template('modulos_janelas.html')
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)

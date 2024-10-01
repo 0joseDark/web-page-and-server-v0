@@ -1,12 +1,10 @@
 meu_projeto/
+├── static/
+│   ├── style.css
+│   └── favicon.ico
 ├── templates/
 │   ├── index.html
 │   ├── modulos_windows.html
 │   ├── modulos_linux.html
-│   ├── modulos_janelas.html  # Novo ficheiro para janelas
-├── static/
-│   ├── style.css
-│   └── xml/
-│       ├── modulos_windows.xml
-│       └── modulos_linux.xml
+│   ├── modulos_janelas.html
 ├── app.py

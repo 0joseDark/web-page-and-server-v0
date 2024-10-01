@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introdução aos Módulos Python</title>
+    <!-- Adicionando o favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <!-- Estilo CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Bem-vindo à Introdução aos Módulos Python</h1>
-    <p>Esta aplicação serve para introduzir alguns dos módulos essenciais em Python para trabalhar com janelas, periféricos e muito mais.</p>
+    <p>Explore as páginas sobre os módulos Python para Windows e Linux, e os módulos de janelas:</p>
 
-    <h2>Escolha o sistema operativo para ver os módulos correspondentes:</h2>
     <ul>
-        <li><a href="/modulos_windows">Módulos para Windows 10</a></li>
-        <li><a href="/modulos_linux">Módulos para Ubuntu Linux</a></li>
-        <li><a href="/modulos_janelas">Módulos de Janelas (Windows e Linux)</a></li> <!-- Novo Link -->
+        <li><a href="{{ url_for('modulos_windows') }}">Módulos para Windows</a></li>
+        <li><a href="{{ url_for('modulos_linux') }}">Módulos para Linux</a></li>
+        <li><a href="{{ url_for('modulos_janelas') }}">Módulos de Janelas</a></li>
     </ul>
 </body>
 </html>
