@@ -2,6 +2,9 @@ meu_projeto/
 ├── static/
 │   ├── style.css
 │   └── favicon.ico
+│   └── xml/
+│       ├── modulos_windows.xml
+│       └── modulos_linux.xml
 ├── templates/
 │   ├── index.html
 │   ├── modulos_windows.html
