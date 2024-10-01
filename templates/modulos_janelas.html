@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulos de Janelas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Módulos de Janelas para Windows e Ubuntu</h1>
+    <p>Dito pelo ChatGPT:</p>
+    
+    <h2>1. Tkinter</h2>
+    <p><strong>Disponível em:</strong> Windows, Linux, macOS.</p>
+    <p><strong>Descrição:</strong> Tkinter é a biblioteca GUI padrão que acompanha a instalação de Python. É baseada na biblioteca gráfica Tk e é uma das opções mais simples para criar GUIs em Python.</p>
+    <p><strong>Recursos:</strong></p>
+    <ul>
+        <li>Interface gráfica básica e fácil de usar.</li>
+        <li>Vem incluída com a instalação padrão do Python.</li>
+        <li>Suporta widgets como botões, caixas de texto, labels, e mais.</li>
+    </ul>
+    <p><strong>Vantagens:</strong></p>
+    <ul>
+        <li>Simplicidade e leveza.</li>
+        <li>Multiplataforma (funciona em Windows, Linux e macOS).</li>
+    </ul>
+    <p><strong>Limitações:</strong></p>
+    <ul>
+        <li>Interface básica e visual um pouco antiquado.</li>
+        <li>Menos flexível para aplicações modernas ou complexas.</li>
+    </ul>
+    <p><strong>Exemplo de Uso:</strong></p>
+    <pre>
+    import tkinter as tk
+
+    janela = tk.Tk()
+    janela.title("Exemplo com Tkinter")
+    label = tk.Label(janela, text="Olá, Tkinter!")
+    label.pack()
+    janela.mainloop()
+    </pre>
+
+    <h2>2. PyQt5</h2>
+    <p><strong>Disponível em:</strong> Windows, Linux, macOS.</p>
+    <p><strong>Descrição:</strong> PyQt5 é uma ligação entre Python e a biblioteca Qt, uma das bibliotecas GUI mais poderosas e amplamente usadas. Oferece widgets avançados, suporte para gráficos 2D/3D e muito mais.</p>
+    <p><strong>Recursos:</strong></p>
+    <ul>
+        <li>Interface moderna e altamente personalizável.</li>
+        <li>Suporte a uma ampla gama de widgets e layouts complexos.</li>
+        <li>Ferramentas para gráficos 2D e 3D, manipulação de áudio/vídeo, e interação com bases de dados.</li>
+    </ul>
+    <p><strong>Vantagens:</strong></p>
+    <ul>
+        <li>Ideal para aplicações mais avançadas e robustas.</li>
+        <li>Suporte completo a estilos modernos e gráficos avançados.</li>
+    </ul>
+    <p><strong>Limitações:</strong></p>
+    <ul>
+        <li>A curva de aprendizado é mais acentuada do que com Tkinter.</li>
+        <li>Pode ser mais pesado para pequenas aplicações.</li>
+    </ul>
+    <p><strong>Exemplo de Uso:</strong></p>
+    <pre>
+    from PyQt5.QtWidgets import QApplication, QLabel, QWidget
+
+    app = QApplication([])
+    janela = QWidget()
+    janela.setWindowTitle("Exemplo com PyQt5")
+    label = QLabel("Olá, PyQt5!", parent=janela)
+    label.move(50, 50)
+    janela.show()
+    app.exec_()
+    </pre>
+
+    <h2>3. Kivy</h2>
+    <p><strong>Disponível em:</strong> Windows, Linux, macOS, Android, iOS.</p>
+    <p><strong>Descrição:</strong> Kivy é um framework GUI de código aberto que oferece suporte a multitouch e é amplamente utilizado para desenvolver aplicações móveis e interfaces modernas.</p>
+    <p><strong>Recursos:</strong></p>
+    <ul>
+        <li>Suporte a multitouch e interfaces dinâmicas.</li>
+        <li>Multiplataforma (funciona em dispositivos móveis e desktops).</li>
+        <li>Interface fluida e rica em animações.</li>
+    </ul>
+    <p><strong>Vantagens:</strong></p>
+    <ul>
+        <li>Ideal para aplicações móveis e interfaces de toque.</li>
+        <li>Interface moderna e animações suaves.</li>
+    </ul>
+    <p><strong>Limitações:</strong></p>
+    <ul>
+        <li>Requer a instalação de dependências adicionais.</li>
+        <li>Curva de aprendizado mais acentuada para iniciantes.</li>
+    </ul>
+    <p><strong>Exemplo de Uso:</strong></p>
+    <pre>
+    from kivy.app import App
+    from kivy.uix.label import Label
+
+    class ExemploApp(App):
+        def build(self):
+            return Label(text="Olá, Kivy!")
+
+    if __name__ == "__main__":
+        ExemploApp().run()
+    </pre>
+
+    <h2>4. wxPython</h2>
+    <p><strong>Disponível em:</strong> Windows, Linux, macOS.</p>
+    <p><strong>Descrição:</strong> wxPython é um wrapper para a biblioteca wxWidgets, que oferece uma interface gráfica nativa em várias plataformas.</p>
+    <p><strong>Recursos:</strong></p>
+    <ul>
+        <li>Suporte a uma ampla gama de widgets e layouts.</li>
+        <li>Interface nativa em diferentes sistemas operativos.</li>
+    </ul>
+    <p><strong>Vantagens:</strong></p>
+    <ul>
+        <li>Integra-se perfeitamente com o estilo nativo da plataforma.</li>
+        <li>Ampla documentação e suporte da comunidade.</li>
+    </ul>
+    <p><strong>Limitações:</strong></p>
+    <ul>
+        <li>Interface pode ser menos moderna comparada a PyQt5.</li>
+    </ul>
+    <p><strong>Exemplo de Uso:</strong></p>
+    <pre>
+    import wx
+
+    app = wx.App(False)
+    janela = wx.Frame(None, wx.ID_ANY, "Exemplo com wxPython")
+    janela.Show(True)
+    app.MainLoop()
+    </pre>
+
+    <h2>5. PyGTK</h2>
+    <p><strong>Disponível em:</strong> Linux, Windows (parcial).</p>
+    <p><strong>Descrição:</strong> PyGTK é um binding para a biblioteca GTK, usada amplamente no ambiente gráfico GNOME em Linux. É uma escolha sólida para desenvolver interfaces gráficas no Linux.</p>
+    <p><strong>Recursos:</strong></p>
+    <ul>
+        <li>Widgets avançados e compatíveis com o ambiente GNOME.</li>
+        <li>Suporte completo a widgets e layouts personalizáveis.</li>
+    </ul>
+    <p><strong>Vantagens:</strong></p>
+    <ul>
+        <li>Melhor integração com o ambiente Linux.</li>
+        <li>Compatível com sistemas Linux que usam GTK+.</li>
+    </ul>
+    <p><strong>Limitações:</strong></p>
+    <ul>
+        <li>Suporte parcial ou incompleto no Windows.</li>
+    </ul>
+    <p><strong>Exemplo de Uso:</strong></p>
+    <pre>
+    import gi
+    gi.require_version("Gtk", "3.0")
+    from gi.repository import Gtk
+
+    janela = Gtk.Window(title="Exemplo com PyGTK")
+    label = Gtk.Label(label="Olá, PyGTK!")
+    janela.add(label)
+    janela.connect("destroy", Gtk.main_quit)
+    janela.show_all()
+    Gtk.main()
+    </pre>
+
+    <h2>6. Flexx</h2>
+    <p><strong>Disponível em:</strong> Windows, Linux, macOS.</p>
+    <p><strong>Descrição:</strong> Flexx é uma biblioteca GUI que permite escrever aplicações de interface gráfica em Python que são executadas no navegador web.</p>
+    <p><strong>Recursos:</strong></p>
+    <ul>
+        <li>Permite desenvolver GUIs em Python para serem executadas no navegador.</li>
+        <li>Baseada em Web (HTML, JavaScript, CSS).</li>
+    </ul>
+    <p><strong>Vantagens:</strong></p>
+    <ul>
+        <li>Interface flexível e multiplataforma.</li>
+    </ul>
+    <p><strong>Limitações:</strong></p>
+    <ul>
+        <li>Requer conhecimento básico de tecnologias web.</li>
+    </ul>
+    <p><strong>Exemplo de Uso:</strong></p>
+    <pre>
+    from flexx import flx
+
+    class ExemploApp(flx.Widget):
+        def init(self):
+            flx.Label(text="Olá, Flexx!")
+
+    flx.run_app(ExemploApp)
+    </pre>
+
+    <a href="/">Voltar à Página Inicial</a>
+</body>
+</html>
