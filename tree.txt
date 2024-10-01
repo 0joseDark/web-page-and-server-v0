@@ -3,7 +3,7 @@ meu_projeto/
 │   ├── index.html
 │   ├── modulos_windows.html
 │   ├── modulos_linux.html
-│   ├── modulos_janelas.html  # Novo ficheiro para janelas
+│   ├── modulos_janelas.html
 ├── static/
 │   ├── style.css
 │   └── xml/
